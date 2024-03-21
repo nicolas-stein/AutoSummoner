@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>AutoSummoner</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/icons/AutoSummoner</normaloff>:/icons/AutoSummoner</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
     <property name="leftMargin">
@@ -252,6 +256,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
