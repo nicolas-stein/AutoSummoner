@@ -1,5 +1,9 @@
 # Virtual environement
-.venv
+.venv/
 
 # Jetbrains
-.idea
+.idea/
+
+# Distribution / packaging
+build/
+dist/
