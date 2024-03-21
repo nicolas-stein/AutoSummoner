@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="designer">
+        <file alias="auto_champion_select_widget.ui">designer/auto_champion_select_widget.ui</file>
+        <file alias="dialog_edit_profile.ui">designer/dialog_edit_profile.ui</file>
+        <file alias="mainwindow.ui">designer/mainwindow.ui</file>
+    </qresource>
+</RCC>

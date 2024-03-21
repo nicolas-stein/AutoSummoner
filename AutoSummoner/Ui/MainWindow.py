@@ -1,6 +1,6 @@
 """Module containing the main window of AutoSummoner."""
 from PyQt5 import uic
-from PyQt5.QtCore import QThread, pyqtSlot
+from PyQt5.QtCore import QThread, pyqtSlot, QFile
 from PyQt5.QtWidgets import QMainWindow, QLabel, QCheckBox, QComboBox
 
 from AutoSummoner.Config.Configuration import Configuration
@@ -38,7 +38,10 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         # Load UI
-        uic.loadUi('designer/mainwindow.Ui', self)
+        ui_file = QFile(":/designer/mainwindow.ui")
+        ui_file.open(QFile.ReadOnly)
+        uic.loadUi(ui_file, self)
+        ui_file.close()
 
         self.main_status_label: QLabel = self.findChild(QLabel, 'main_status_label')
         self.main_mainfeatures_autolobby_checkbox: QCheckBox = self.findChild(QCheckBox, 'main_mainfeatures_autolobby_checkbox')

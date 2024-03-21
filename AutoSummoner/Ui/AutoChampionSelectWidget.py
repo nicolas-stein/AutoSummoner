@@ -1,6 +1,6 @@
 """Module containing the auto champion select configuration widget."""
 from PyQt5 import uic
-from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt
+from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QFile
 from PyQt5.QtWidgets import QWidget, QPushButton, QListWidget, QInputDialog, QListWidgetItem, QComboBox, QCheckBox, \
     QMessageBox
 
@@ -38,7 +38,11 @@ class AutoChampionSelectWidget(QWidget):
         """
         super().__init__(parent)
 
-        uic.loadUi("designer/auto_champion_select_widget.Ui", self)
+        # Loading UI and linking elements
+        ui_file = QFile(":/designer/auto_champion_select_widget.ui")
+        ui_file.open(QFile.ReadOnly)
+        uic.loadUi(ui_file, self)
+        ui_file.close()
 
         self.auto_champion_select_champion_profile_combobox: QComboBox = self.findChild(QComboBox,"auto_champion_select_champion_profile_combobox")
         self.auto_champion_select_champion_profile_add_button: QPushButton = self.findChild(QPushButton, "auto_champion_select_champion_profile_add_button")

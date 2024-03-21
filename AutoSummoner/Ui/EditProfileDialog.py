@@ -1,6 +1,6 @@
 """Module containing the edit profile dialog."""
 from PyQt5 import uic
-from PyQt5.QtCore import Qt, pyqtSlot
+from PyQt5.QtCore import Qt, pyqtSlot, QFile
 from PyQt5.QtWidgets import QDialog, QLineEdit, QListWidget, QCheckBox, QListWidgetItem
 
 from AutoSummoner.Config.Features.ConfigAutoChampionSelectProfile import ConfigAutoChampionSelectProfile
@@ -26,7 +26,10 @@ class EditProfileDialog(QDialog):
         self.__existing_profile_id = existing_profile_config.get_id() if existing_profile_config is not None else None
 
         # Load UI
-        uic.loadUi('designer/dialog_edit_profile.Ui', self)
+        ui_file = QFile(":/designer/dialog_edit_profile.ui")
+        ui_file.open(QFile.ReadOnly)
+        uic.loadUi(ui_file, self)
+        ui_file.close()
 
         self.dialog_edit_profile_name_lineedit: QLineEdit = self.findChild(QLineEdit, "dialog_edit_profile_name_lineedit")
 

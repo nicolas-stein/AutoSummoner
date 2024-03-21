@@ -6,6 +6,8 @@ from PyQt5.QtWidgets import QApplication
 from AutoSummoner.Ui import AutoChampionSelectWidget
 from AutoSummoner.Ui.MainWindow import MainWindow
 
+# pylint: disable=unused-import
+import resources
 
 def run() -> int:
     """
