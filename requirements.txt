@@ -1,0 +1,4 @@
+PyQt5~=5.15.10
+lcu_driver~=3.0.1
+aiohttp~=3.9.1
+requests~=2.31.0

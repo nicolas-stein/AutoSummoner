@@ -1,0 +1,5 @@
+# Virtual environement
+.venv
+
+# Jetbrains
+.idea
