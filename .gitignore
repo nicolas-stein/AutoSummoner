@@ -7,3 +7,6 @@
 # Distribution / packaging
 build/
 dist/
+
+__pycache__/
+config.ini

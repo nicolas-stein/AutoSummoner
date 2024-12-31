@@ -205,10 +205,11 @@ class MainWindow(QMainWindow):
         :param index: index of the selected item in the combobox.
         """
         # pylint: disable=invalid-name
-        (self.config.get_feature_configuration(MainFeatures.AUTO_LOBBY)
-         .set_auto_select_queue(self.main_autolobby_autoselectqueue_combobox.itemData(index),
-                                self.main_autolobby_autoselectqueue_checkbox.isChecked()))
-        self.propagate_updated_config()
+        if index >= 0:
+            (self.config.get_feature_configuration(MainFeatures.AUTO_LOBBY)
+             .set_auto_select_queue(self.main_autolobby_autoselectqueue_combobox.itemData(index),
+                                    self.main_autolobby_autoselectqueue_checkbox.isChecked()))
+            self.propagate_updated_config()
 
     @pyqtSlot(bool)
     def on_main_autolobby_autoselectroles_checkbox_clicked(self, checked: bool) -> None:
